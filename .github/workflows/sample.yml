@@ -42,7 +42,7 @@ jobs:
           dotnet-version: 8.0
 
       - name: build with .net
-        run: dotnet build --configuration Release
+        run: dotnet build WebApplication1 --configuration Release
 
       - name: ls
         run: ls
