@@ -24,18 +24,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: ls
-        run: ls
-      - name: go to directory
-        run: cd WebApplication1
-
-      - name: ls
-        run: ls
-      - name: go to directory
-        run: cd WebApplication1
-
-      - name: ls
-        run: ls
+      - name: cd and ls
+        run: |
+          cd src/MyApp
+          ls
+        
       - name: Setup .net env
         uses: actions/setup-dotnet@v4
         with:
@@ -44,8 +37,6 @@ jobs:
       - name: build with .net
         run: dotnet build WebApplication1 --configuration Release
 
-      - name: ls
-        run: ls
 
       # - name: dotnet publish
 
